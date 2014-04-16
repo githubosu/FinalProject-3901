@@ -12,31 +12,31 @@
   <%end%>
 
   <div class="container">
-  <p>
+  <div class="well">
     <%= f.label :New_Event %>
     <%= f.text_field :title %>
-  </p>
+  </div>
  
-  <p>
+  <div class="well">
     <%= f.label :Color %>
-    <%= f.text_field :color %>
-  </p>
+    <%= f.text_field :color, class: "icolor" %>
+  </div>
  
- <p>
+ <div class="well">
   <%= f.label :Start %>
-  <%= f.text_field :start, class: "datetimepicker1", 'data-format' => 'yyyy/MM/dd HH:mm:ss ' %>
- </p>
+  <%= f.text_field :start, class: "input-append date form_datetime",'id'=> 'p1' %>
+ </div>
 
-<p>
+<div class="well">
   <%= f.label :End %>
-  <%= f.text_field :end, class: 'datetimepicker2', 'data-format' => 'yyyy/MM/dd HH:mm:ss ' %>
- </p>
+  <%= f.text_field :end, class: 'input-append date form_datetime', 'id'=> 'p2' %>
+ </div>
 
-  <p> 
-      <%= f.label :All_Day %>
-      <%= f.check_box :allDay %>
-  </p>
-  
+ <div class="well">
+    <%= f.label :All_day %>
+    <%= f.check_box :allDay %>
+ </div>
+
   <p>
     <%= f.submit %>
   </p>
@@ -44,7 +44,11 @@
 </div>
 
 <script type="text/javascript">
-  $(function(){
-    $('.datetimepicker1,.datetimepicker2').datetimepicker({});
-  });
-  </script>
+  
+  $(function(){$('#p1,#p2').datetimepicker({
+    format: "yyyy MM dd - hh:ii"
+  });});
+
+  $(function(){$('.icolor').minicolors()});
+
+</script>

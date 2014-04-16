@@ -52,9 +52,8 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-ui-rails'
-gem 'bootstrap-datepicker-rails'
-gem 'datetimepicker-rails', :require => 'datetimepicker-rails', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git'
-
+gem 'jquery-minicolors-rails'
+gem 'smalot-bootstrap-datetimepicker-rails'
 group :development do
 	gem 'pry-rails'
 	gem 'meta_request'

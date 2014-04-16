@@ -19,6 +19,7 @@
 //= require_tree .
 //= require bootstrap-datepicker
 //= require bootstrap-datetimepicker
+//= require jquery.minicolors
 
 $(document).ready(function(){
 
