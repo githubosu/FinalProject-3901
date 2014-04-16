@@ -22,14 +22,14 @@
 //= require jquery.minicolors
 
 $(document).ready(function(){
-
+    //Get current date
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-
+    //initializing full calendar
     $('#calendar').fullCalendar({
-        
+        //setting options for calendar
         header: {
             left: 'prev,next today',
             center: 'title',
@@ -38,7 +38,7 @@ $(document).ready(function(){
         },
         selectable: true,
         selectHelper: true,
-    
+        //select on click event to add new event 
         select: function(start, end, allDay)
                 {
                    
@@ -57,30 +57,23 @@ $(document).ready(function(){
                     }
                     calendar.fullCalendar('unselect');
                 },
-                
-
-        
         defaultView: 'agendaWeek',
-
         editable: true,
-      
+        //getting data from database using json 
         eventSources: [
-
-        // your event source
             {
             url: '/events.json',
             type: 'GET'
             }
-
         ],
 
-        
         dragOpacity: "0.5",
+        //drag drop event to different time 
         eventDrop: function(event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view){
-            console.log('eventDrop called');
-            console.log(event);
-            console.log(dayDelta);
-            console.log(minuteDelta);
+            // console.log('eventDrop called');
+            // console.log(event);
+            // console.log(dayDelta);
+            // console.log(minuteDelta);
 
             var new_event = {
             	id: event.id,
@@ -99,7 +92,7 @@ $(document).ready(function(){
               }); 
 
         },
-
+        //get info and edit event
         eventClick: function(calEvent, jsEvent, view) {
         window.location = "http://localhost:3000/events/" + calEvent.id;
         }
