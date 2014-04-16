@@ -8,5 +8,5 @@ $.fn.extend {
     selector = selector || '.datepicker' 
     $(@).find(selector).datepicker() 
 }
-$(document).ready () -> 
-  $('body').integrateDatepicker()
+ $(document).ready () -> 
+   $('body').integrateDatepicker()

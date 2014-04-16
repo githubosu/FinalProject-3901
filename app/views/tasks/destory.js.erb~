@@ -1,0 +1,1 @@
+$('#task-list').html('<%= j(render partial: 'task_list', locals: {tasks: @tasks})%>'); - See more at: http://arubystory.blogspot.com/2013/12/rails-todo-tutorial-part-two.html#sthash.CAg113Zl.dpuf

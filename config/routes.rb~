@@ -1,7 +1,16 @@
 Finalproject::Application.routes.draw do
 
-  devise_for :users => {root to: 'pages#home'}, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  devise_for :users , :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  #root to: 'events#index'
+  root to: 'pages#home'
 
+  resources :tasks
+
+  resources :events do
+    member do
+      post :move
+    end
+  end
 
   #root to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.

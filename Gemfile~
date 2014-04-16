@@ -21,6 +21,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'simple_form'
+gem 'haml'
 
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
@@ -45,17 +47,17 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'haml'
 gem 'bootstrap-sass'
-gem 'simple_form'
 gem 'fullcalendar-rails'
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-ui-rails'
-gem 'jquery-minicolors-rails'
-gem 'smalot-bootstrap-datetimepicker-rails'
+gem 'datetimepicker-rails', :require => 'datetimepicker-rails', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git'
+
 group :development do
 	gem 'pry-rails'
 	gem 'meta_request'
 end
+
+

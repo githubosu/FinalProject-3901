@@ -53,6 +53,8 @@ GEM
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     fullcalendar-rails (1.6.4.0)
+    haml (4.0.5)
+      tilt
     hashie (2.1.1)
     hike (1.2.3)
     httpauth (0.2.1)
@@ -185,6 +187,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   fullcalendar-rails
+  haml
   jbuilder (~> 1.2)
   jquery-minicolors-rails
   jquery-rails

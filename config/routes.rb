@@ -1,7 +1,10 @@
 Finalproject::Application.routes.draw do
 
   devise_for :users , :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
-  root to: 'events#index'
+  #root to: 'events#index'
+  root to: 'pages#home'
+
+  resources :tasks, except: [:index]
 
   resources :events do
     member do
