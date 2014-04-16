@@ -17,6 +17,7 @@ def new
 end
 
 def show
+	@event = Event.find(params[:id])
 end
 
 
@@ -34,28 +35,34 @@ end
 
 
 def move
-	#binding.pry
-
-	#start_move = (params[:minute_delta].to_i).minutes.from_now((params[:day_delta].to_i).days.from_now(@event.start))
-	#end_move = (params[:minute_delta].to_i).minutes.from_now((params[:day_delta].to_i).days.from_now(@event.end))
-
     if @event.update_attributes(event_params) 
     	respond_with @event do |format|
     		format.json
     	end
-
-     #  @event.start = 
-  	 # @event.end = 
-     #  @event.allDay = params[:allDay]
-     
     end
-    #render :nothing => true
 end
 
 def edit
-    render :json => { :new => render_to_string('new') } 
-  end
+    #render :json => { :new => render_to_string('new') } 
+    @event= Event.find(params[:id])
+end
 
+def update
+	@event= Event.find(params[:id])
+
+	if @event.update(event_params)
+		redirect_to @event
+	else
+		render "edit"
+	end
+end
+
+def destroy
+	@event = Event.find(params[:id])
+	@event.destroy
+
+	redirect_to events_path
+end
 
 private
 	def event_params

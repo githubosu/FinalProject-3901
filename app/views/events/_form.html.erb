@@ -1,0 +1,50 @@
+<%= form_for @event do |f| %>
+  
+  <% if @event.errors.any? %>
+  <div id="error_explanation">
+    <h3><% pluralize(@event.errors.count, "error") %> prohibited this event from being created: </h3>
+    <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <%end%>
+    </ul>
+  </div>
+  <%end%>
+
+  <div class="container">
+  <p>
+    <%= f.label :New_Event %>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :Color %>
+    <%= f.text_field :color %>
+  </p>
+ 
+ <p>
+  <%= f.label :Start %>
+  <%= f.text_field :start, class: "datetimepicker1", 'data-format' => 'yyyy/MM/dd HH:mm:ss ' %>
+ </p>
+
+<p>
+  <%= f.label :End %>
+  <%= f.text_field :end, class: 'datetimepicker2', 'data-format' => 'yyyy/MM/dd HH:mm:ss ' %>
+ </p>
+
+  <p> 
+      <%= f.label :All_Day %>
+      <%= f.check_box :allDay %>
+  </p>
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+</div>
+
+<script type="text/javascript">
+  $(function(){
+    $('.datetimepicker1,.datetimepicker2').datetimepicker({});
+  });
+  </script>

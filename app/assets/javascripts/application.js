@@ -107,7 +107,11 @@ $(document).ready(function(){
         },
 
         eventClick: function(calEvent, jsEvent, view) {
-            editEvent(calEvent);
+            $.ajax({
+                type:"POST", 
+                dataType: 'json',
+                url:'/events/'+ calEvent.id + '/update'
+            })
         // alert('Event: ' + calEvent.title);
         // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
         // alert('View: ' + view.name);

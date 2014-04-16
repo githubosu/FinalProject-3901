@@ -1,50 +1,10 @@
+
+
 <div class="container">
-	<%= form_for @event do |f| %>
-<p>
-    <%= f.label :New_Event %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :Color %><br>
-    <%= f.text_field :color %>
-  </p>
- 
- <p>
-  <%= f.label :Start %><br/>
-  <%= f.text_field :start, class: "datetimepicker1", 'data-format' => 'yyyy/MM/dd HH:mm:ss ' %>
- <script type="text/javascript">
-    $('.datetimepicker1').datetimepicker({
-      language: 'en',
-      
-    })
-  </script>
-
- </p>
-
-<p>
-  <%= f.label :End %><br/>
-  <%= f.text_field :end, class: 'datetimepicker2', 'data-format' => 'yyyy/MM/dd HH:mm:ss ' %>
-
-  <script type="text/javascript">
-  $(function(){
-    $('.datetimepicker2').datetimepicker({
-      language: 'en',
-      
-    });
-  });
-  </script>
- </p>
-
-  <p> 
-      <%= f.label :All_Day %>
-      <%= f.check_box :allDay %>
-  </p>
-  
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-
+	<h1> Create New Event </h1>
+  <%= render 'form' %>
 <%= link_to 'Back', events_path %>
 </div>
+
+
+  
