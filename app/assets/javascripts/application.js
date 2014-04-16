@@ -14,22 +14,22 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery.ui.all
+//= require jquery.minicolors
 //= require bootstrap
 //= require fullcalendar
 //= require_tree .
 //= require bootstrap-datepicker
 //= require bootstrap-datetimepicker
-//= require jquery.minicolors
 
 $(document).ready(function(){
-    //Get current date
+
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-    //initializing full calendar
+
     $('#calendar').fullCalendar({
-        //setting options for calendar
+        
         header: {
             left: 'prev,next today',
             center: 'title',
@@ -38,45 +38,39 @@ $(document).ready(function(){
         },
         selectable: true,
         selectHelper: true,
-        //select on click event to add new event 
+    
         select: function(start, end, allDay)
                 {
-                   
-                    var title = prompt('Event Title:');
-                    if (title)
-                    {
-                        calendar.fullCalendar('renderEvent',
-                            {
-                                title: title,
-                                start: start,
-                                end: end,
-                                allDay: allDay
-                            },
-                            true 
-                        );
-                    }
+ 
+                    window.location ="http://localhost:3000/events/new"
                     calendar.fullCalendar('unselect');
                 },
+                
+
+        
         defaultView: 'agendaWeek',
+
         editable: true,
-        //getting data from database using json 
         eventSources: [
+
+        // your event source
             {
             url: '/events.json',
             type: 'GET'
             }
+
         ],
 
+        
         dragOpacity: "0.5",
-        //drag drop event to different time 
         eventDrop: function(event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view){
-            // console.log('eventDrop called');
-            // console.log(event);
-            // console.log(dayDelta);
-            // console.log(minuteDelta);
+            console.log('eventDrop called');
+            console.log(event);
+            console.log(dayDelta);
+            console.log(minuteDelta);
 
             var new_event = {
-            	id: event.id,
+                id: event.id,
                 start: dayDelta,
                 end: minuteDelta
             }
@@ -89,12 +83,27 @@ $(document).ready(function(){
                     id: new_event.id,
                     event: new_event,
                 }
+                // success: function (data, textStatus, jqXHR) {
+                //     console.log('success');
+                // },
+                // error: function ( xhr, status, error ) {
+                //     console.log('error');
+                //  }
+
               }); 
 
         },
-        //get info and edit event
+
         eventClick: function(calEvent, jsEvent, view) {
         window.location = "http://localhost:3000/events/" + calEvent.id;
+            
+        // alert('Event: ' + calEvent.title);
+        // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+        // alert('View: ' + view.name);
+
+        // // change the border color just for fun
+        // $(this).css('border-color', 'red');
+
         }
 
       
