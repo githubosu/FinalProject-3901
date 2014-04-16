@@ -1,4 +1,4 @@
-//this file makes sure that both the update and create will render once the form is hide
+//# this file makes sure that both the update and create will render once the form is hide
 
 $('#task-list').html('<%= j(render partial: 'tasks/task_list', locals: {tasks: @tasks}) %>'); 
 $('#modal').modal('hide');

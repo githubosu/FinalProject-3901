@@ -1,3 +1,4 @@
+<%# this file defined the identity class, which is used for facebook login %>
 class Identity < ActiveRecord::Base 
 
 
@@ -11,7 +12,7 @@ identity = find_by(provider: auth.provider, uid: auth.uid)
 	if identity.nil? 
 	identity = create(uid: auth.uid, provider: auth.provider) 
 	end 
-#identity 
+identity 
 end 
 
 end 

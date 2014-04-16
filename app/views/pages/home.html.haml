@@ -1,4 +1,6 @@
+//this file sets the homepage of to-do part
 #task-list.container 
+= link_to 'Todo', new_task_path, class: 'btn btn-primary', remote: true
 = render partial: 'tasks/task_list', locals: {tasks: @tasks} 
 #modal.modal.fade
 

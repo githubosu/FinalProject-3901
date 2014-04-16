@@ -1,3 +1,4 @@
+# this file defined the identity class, which is used for facebook login
 class Identity < ActiveRecord::Base 
 
 

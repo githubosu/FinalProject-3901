@@ -14,7 +14,7 @@
 		<div class="span10 offset1">
 			<div class="container">     
 				<div class="jumbotron text-center">       
-					<h1>Calendar</h1> <br />      
+					<h1>To-DO</h1> <br />      
 						<p>Welcome! <strong><%= current_user.email %></strong> |
 					<%= link_to 'logout', destroy_user_session_path, :method => 'delete' %>   
 	 </p> 
@@ -23,7 +23,11 @@
 	</div> 
 </div> 
 
-<%= yield %>
+#task-list.container 
+= link_to 'Todo', new_task_path, class: 'btn btn-primary', remote: true
+= render partial: 'tasks/task_list', locals: {tasks: @tasks} 
+#modal.modal.fade
+
 <br />
 <div id="footer" class="container">
         <div class="navbar navbar-dafault">
