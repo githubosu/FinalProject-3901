@@ -96,27 +96,12 @@ $(document).ready(function(){
                     id: new_event.id,
                     event: new_event,
                 }
-                // success: function (data, textStatus, jqXHR) {
-                //     console.log('success');
-                // },
-                // error: function ( xhr, status, error ) {
-                //     console.log('error');
-                //  }
-
               }); 
 
         },
 
         eventClick: function(calEvent, jsEvent, view) {
         window.location = "http://localhost:3000/events/" + calEvent.id;
-            
-        // alert('Event: ' + calEvent.title);
-        // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-        // alert('View: ' + view.name);
-
-        // // change the border color just for fun
-        // $(this).css('border-color', 'red');
-
         }
 
       

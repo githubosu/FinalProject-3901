@@ -1,8 +1,7 @@
 class PagesController < ApplicationController
 
-  def home
+  def index
     @tasks = Task.all
-    
   end
 	
 end

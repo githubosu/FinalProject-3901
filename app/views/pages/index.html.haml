@@ -2,5 +2,6 @@
 #task-list.container 
 = link_to 'Todo', new_task_path, class: 'btn btn-primary', remote: true
 = render partial: 'tasks/task_list', locals: {tasks: @tasks} 
+= link_to 'Calendar', events_path 
 #modal.modal.fade
 

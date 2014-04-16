@@ -1,5 +1,7 @@
+
+<!-- This is the form file that generate the form for all the event-->
 <%= form_for @event do |f| %>
-  
+  <!-- This is the part that check with the model to ensure all the condition are matched. If all the conditions are not match, it will pop out errors message-->
   <% if @event.errors.any? %>
   <div id="error_explanation">
     <h3><% pluralize(@event.errors.count, "error") %> prohibited this event from being created: </h3>
@@ -10,29 +12,29 @@
     </ul>
   </div>
   <%end%>
-
+  <!-- Here begins the form  --> 
   <div class="container">
-  <div class="well">
+  <div class="well"> <!-- Event name input -->
     <%= f.label :New_Event %>
     <%= f.text_field :title %>
   </div>
  
-  <div class="well">
+  <div class="well"><!-- color input for the color of the column in the calendar -->
     <%= f.label :Color %>
     <%= f.text_field :color, class: "icolor" %>
   </div>
  
- <div class="well">
+ <div class="well"><!-- Event start time input -->
   <%= f.label :Start %>
   <%= f.text_field :start, class: "input-append date form_datetime",'id'=> 'p1' %>
  </div>
 
 <div class="well">
-  <%= f.label :End %>
+  <%= f.label :End %><!-- Event end time input -->
   <%= f.text_field :end, class: 'input-append date form_datetime', 'id'=> 'p2' %>
  </div>
 
- <div class="well">
+ <div class="well"> <!-- All day check box, when this check box is being clicked, it will ignore the start and end time because the event lasted for the whole day  -->
     <%= f.label :All_day %>
     <%= f.check_box :allDay %>
  </div>
@@ -43,12 +45,13 @@
 <% end %>
 </div>
 
+<!-- Javascript-->
 <script type="text/javascript">
-  
+  //pop out calendar function 
   $(function(){$('#p1,#p2').datetimepicker({
     format: "yyyy MM dd - hh:ii"
   });});
-
+  //pop out color picker 
   $(function(){$('.icolor').minicolors()});
 
 </script>
