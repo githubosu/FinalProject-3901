@@ -35,12 +35,28 @@ end
 
 
 def move
+
     if @event.update_attributes(event_params) 
     	respond_with @event do |format|
     		format.json
     	end
     end
 end
+
+	#binding.pry
+  
+
+    # if @event.update_attributes(event_params) 
+    # 	respond_with @event do |format|
+    # 		format.json
+    # 	end
+
+     #  @event.start = 
+  	 # @event.end = 
+     #  @event.allDay = params[:allDay]
+     
+    # end
+    #render :nothing => true
 
 def edit
     #render :json => { :new => render_to_string('new') } 

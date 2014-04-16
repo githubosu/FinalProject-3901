@@ -69,8 +69,8 @@ $(document).ready(function(){
             {
             url: '/events.json',
             type: 'GET'
-            
             }
+
         ],
 
         
@@ -83,8 +83,8 @@ $(document).ready(function(){
 
             var new_event = {
             	id: event.id,
-                dayDelta: dayDelta,
-                minuteDelta: minuteDelta
+                start: dayDelta,
+                end: minuteDelta
             }
 
             $.ajax({
@@ -107,11 +107,8 @@ $(document).ready(function(){
         },
 
         eventClick: function(calEvent, jsEvent, view) {
-            $.ajax({
-                type:"POST", 
-                dataType: 'json',
-                url:'/events/'+ calEvent.id + '/update'
-            })
+        window.location = "http://localhost:3000/events/" + calEvent.id;
+            
         // alert('Event: ' + calEvent.title);
         // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
         // alert('View: ' + view.name);
