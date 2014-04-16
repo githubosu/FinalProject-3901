@@ -21,9 +21,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
 
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
@@ -54,3 +51,14 @@ gem 'fullcalendar-rails'
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
+gem 'jquery-ui-rails'
+gem 'bootstrap-datepicker-rails'
+gem 'datetimepicker-rails', :require => 'datetimepicker-rails', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git'
+
+group :development do
+	gem 'pry-rails'
+	gem 'meta_request'
+end
+
+
+

@@ -10,10 +10,12 @@
  *
  *= require_self
  *= require bootstrap
+ *= require jquery.ui.all
  *= require fullcalendar
  *= require fullcalendar.print
  *= require_tree .
- *= require bootstrap-datepicker3
+ *= require bootstrap-datepicker
+ *= require bootstrap-datetimepicker
  */
 
  @import 'bootstrap';

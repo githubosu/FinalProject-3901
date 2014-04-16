@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140412195926) do
+ActiveRecord::Schema.define(version: 20140415221132) do
 
   create_table "events", force: true do |t|
     t.string   "title"
     t.string   "color"
-    t.datetime "start"
-    t.datetime "end"
+    t.datetime "start",      limit: 255
+    t.datetime "end",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "allDay",                 default: false
   end
 
   create_table "identities", force: true do |t|

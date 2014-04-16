@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Finalproject</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
 
@@ -18,7 +18,7 @@
 					<%= link_to 'logout', destroy_user_session_path, :method => 'delete' %>   
 					 </p> 
 				</div> 
-				<%=  link_to 'Create New Event',events_new_path %>
+				<%=  link_to 'Create New Event', new_event_path %>
 			</div>  
 	</div> 
 </div> 

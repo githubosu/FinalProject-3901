@@ -1,9 +1,14 @@
 Finalproject::Application.routes.draw do
 
   devise_for :users , :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
-root to: 'events#index'
-resources :events
-match '/events/new' , to: 'events#create' , via: :post
+  root to: 'events#index'
+
+  resources :events do
+    member do
+      post :move
+    end
+  end
+
   #root to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
